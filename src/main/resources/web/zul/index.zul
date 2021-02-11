@@ -1,0 +1,19 @@
+<?page title="ZK integration"?>
+<window title="view person" border="normal" width="100%"
+		id="wndViewPerson" use="com.controller.PersonController">
+	<listbox id="lbPerson" checkmark="true"
+			 emptyMessage="data not found" onSelect="wndViewPerson.onSelectLB()">
+		<listhead>
+			<listheader label="Name" />
+		</listhead>
+	</listbox>
+	<hlayout>
+		<label value="Name" />
+		<textbox width="150px" id="tbPersonName"
+				 onChanging="tbbSave.setDisabled(false)" />
+		<toolbarbutton label="save" onClick="wndViewPerson.onSave()"
+					   id="tbbSave" disabled="true" />
+		<toolbarbutton label="delete" disabled="true" id="tbbDelete"
+					   onClick="wndViewPerson.onDeletePerson()" />
+	</hlayout>
+</window>
